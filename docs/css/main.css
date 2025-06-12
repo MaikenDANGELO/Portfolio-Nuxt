@@ -2,20 +2,16 @@
 @import "tailwindcss-primeui";
 @import 'primeicons/primeicons.css';
 
-
-body{
-    font-family: "Montserrat", monospace;
-    background-color: var(--p-background-color) ;
-    color: var(--p-primary-color-text)
-}
-
 :root {
     --p-background-color: #0C0B1D;
     --p-content-background: #0C0616;
+    --p-tabs-tabpanel-background: var(--p-content-background);
     --p-primary-color: #D7AC4F;
     --p-secondary-color: #fcfbfb;
     --p-primary-hover-color: #AF8D43;
     --p-primary-contrast-color: #fcfbfb;
+    --p-button-primary-background: var(--p-primary-color);
+    --p-button-primary-border-color: var(--p-primary-color);
     --p-button-primary-active-background: #c6bbb9;
     --p-button-primary-active-border-color: #c6bbb9;
     --p-button-text-plain-hover-background: #2B2833;
@@ -25,6 +21,14 @@ body{
     --p-card-color: var(--p-primary-color-text);
     --p-card-subtitle-color: var(--p-primary-hover-color);
 }
+
+body{
+    font-family: "Montserrat", monospace;
+    background-color: var(--p-background-color) ;
+    color: var(--p-primary-color-text)
+}
+
+
 
 .p-card-title{
     color: var(--p-primary-color-title)
