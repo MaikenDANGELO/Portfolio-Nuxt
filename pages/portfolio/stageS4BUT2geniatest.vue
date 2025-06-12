@@ -42,33 +42,33 @@
               <Image
                 v-tooltip.left="'Typescript'"
                 width="32"
-                src="/icons/typescript.svg"
+                src="icons/typescript.svg"
               />
-              <Image v-tooltip.left="'NuxtJS'" width="32" src="/favicon.ico" />
+              <Image v-tooltip.left="'NuxtJS'" width="32" src="favicon.ico" />
               <Image
                 v-tooltip.left="'VueJS'"
                 width="32"
-                src="/icons/vuejs.svg"
+                src="icons/vuejs.svg"
               />
               <Image
                 v-tooltip.left="'Nodejs'"
                 width="32"
-                src="/icons/nodejs.svg"
+                src="icons/nodejs.svg"
               />
               <Image
                 v-tooltip.left="'Nestjs'"
                 width="32"
-                src="/icons/nestjs.svg"
+                src="icons/nestjs.svg"
               />
               <Image
                 v-tooltip.left="'PostgreSQL avec TypeORM'"
                 width="32"
-                src="/icons/pgsql.svg"
+                src="icons/pgsql.svg"
               />
               <Image
                 v-tooltip.left="'TailwindCSS'"
                 width="32"
-                src="/icons/tailwind.svg"
+                src="icons/tailwind.svg"
               />
             </div>
           </div>
@@ -113,14 +113,14 @@
               >
               <br /><br />
             </p>
-            <Image src="/portfolio_geniatest/organigramme.jpg" />
+            <Image src="portfolio_geniatest/organigramme.jpg" />
             <span
               >(Figure 2) Organigramme de Gen'IAtest présentant la hiérarchie
               des différents services</span
             >
           </div>
           <div class="flex flex-col gap-2">
-            <Image width="512" src="/portfolio_geniatest/carte_activite.jpg" />
+            <Image width="512" src="portfolio_geniatest/carte_activite.jpg" />
             <span class="w-[512px]"
               >(Figure 1) Zone d'activité de Gen'IAtest, divisée par secteur,
               englobant les départements du Doubs, du Jura, de la Haute-Marne,
@@ -226,7 +226,7 @@
             j'ai utilisé comme référence au cours de mon développement.
             <Image
               width="1024"
-              src="/portfolio_geniatest/contraintes_consignes.png"
+              src="portfolio_geniatest/contraintes_consignes.png"
             />
             <span class="text-md w-[1024px]"
               >(Figure 3) - Capture d'écran d'une partie du document Microsoft
@@ -250,7 +250,7 @@
             l'organisation mise en place.
             <Image
               width="1024"
-              src="/portfolio_geniatest/calendrier_organisation_stage.png"
+              src="portfolio_geniatest/calendrier_organisation_stage.png"
             />
             <span class="text-md w-[1024px]"
               >(Figure 4) - Capture d'écran d'une partie du document Microsoft

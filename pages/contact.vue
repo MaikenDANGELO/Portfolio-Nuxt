@@ -28,18 +28,18 @@
         <h2>Mes réseaux</h2>
         <div class="flex flex-row gap-15">
           <a target="_blank" href="https://github.com/MaikenDANGELO"
-            ><Image width="64" src="/icons/github.svg"
+            ><Image width="64" src="icons/github.svg"
           /></a>
           <a target="_blank" href="https://github.com/RaskieL"
-            ><Image width="64" src="/icons/github.svg"
+            ><Image width="64" src="icons/github.svg"
           /></a>
           <a target="_blank" href="https://discord.com/users/444074251079778314"
-            ><Image width="64" src="/icons/discord.svg"
+            ><Image width="64" src="icons/discord.svg"
           /></a>
           <a
             target="_blank"
             href="https://www.linkedin.com/in/ma%C3%AFken-d-angelo-12a500331"
-            ><Image width="64" src="/icons/linkedin.svg"
+            ><Image width="64" src="icons/linkedin.svg"
           /></a>
         </div>
       </div>

@@ -44,27 +44,27 @@
                     <Image
                       v-tooltip.left="'Nodejs'"
                       width="128"
-                      src="/icons/nodejs.svg"
+                      src="icons/nodejs.svg`"
                     />
                     <Image
                       v-tooltip.left="'Nestjs'"
                       width="128"
-                      src="/icons/nestjs.svg"
+                      src="icons/nestjs.svg"
                     />
                     <Image
                       v-tooltip.left="'QT'"
                       width="128"
-                      src="/icons/qt.svg"
+                      src="icons/qt.svg"
                     />
                     <Image
                       v-tooltip.left="'PostgreSQL'"
                       width="128"
-                      src="/icons/pgsql.svg"
+                      src="icons/pgsql.svg"
                     />
                     <Image
                       v-tooltip.left="'MySQL'"
                       width="128"
-                      src="/icons/mysql.svg"
+                      src="icons/mysql.svg"
                     />
                   </div>
                 </TabPanel>
@@ -74,17 +74,17 @@
                     <Image
                       v-tooltip.left="'Vuejs3'"
                       width="128"
-                      src="/icons/vuejs.svg"
+                      src="icons/vuejs.svg"
                     />
                     <Image
                       v-tooltip.left="'Nuxt3'"
                       width="128"
-                      src="/icons/nuxt.svg"
+                      src="icons/nuxt.svg"
                     />
                     <Image
                       v-tooltip.left="'TailwindCSS'"
                       width="128"
-                      src="/icons/tailwind.svg"
+                      src="icons/tailwind.svg"
                     />
                   </div>
                 </TabPanel>
@@ -97,49 +97,49 @@
               <Image
                 v-tooltip.left="'Typescript'"
                 width="128"
-                src="/icons/typescript.svg"
+                src="icons/typescript.svg"
               />
               <Image
                 v-tooltip.left="'Javascript'"
                 width="128"
-                src="/icons/javascript.svg"
+                src="icons/javascript.svg"
               />
-              <Image v-tooltip.left="'C'" width="128" src="/icons/c.svg" />
-              <Image v-tooltip.left="'C++'" width="128" src="/icons/cpp.svg" />
+              <Image v-tooltip.left="'C'" width="128" src="icons/c.svg" />
+              <Image v-tooltip.left="'C++'" width="128" src="icons/cpp.svg" />
               <Image
                 v-tooltip.left="'C#'"
                 width="128"
-                src="/icons/csharp.svg"
+                src="icons/csharp.svg"
               />
               <Image
                 v-tooltip.left="'Java'"
                 width="128"
-                src="/icons/java.svg"
+                src="icons/java.svg"
               />
               <Image
                 v-tooltip.left="'Kotlin'"
                 width="128"
-                src="/icons/kotlin.svg"
+                src="icons/kotlin.svg"
               />
               <Image
                 v-tooltip.left="'Swift'"
                 width="128"
-                src="/icons/swift.svg"
+                src="icons/swift.svg"
               />
               <Image
                 v-tooltip.left="'Python'"
                 width="128"
-                src="/icons/python.svg"
+                src="icons/python.svg"
               />
               <Image
                 v-tooltip.left="'HTML-5'"
                 width="128"
-                src="/icons/html.svg"
+                src="icons/html.svg"
               />
               <Image
                 v-tooltip.left="'CSS-3'"
                 width="128"
-                src="/icons/css.svg"
+                src="icons/css.svg"
               />
             </div>
           </TabPanel>
@@ -149,17 +149,17 @@
               <Image
                 v-tooltip.left="'Visual Studio Code'"
                 width="128"
-                src="/icons/vscode.svg"
+                src="icons/vscode.svg"
               />
               <Image
                 v-tooltip.left="'Blender'"
                 width="128"
-                src="/icons/blender.svg"
+                src="icons/blender.svg"
               />
               <Image
                 v-tooltip.left="'Godot'"
                 width="128"
-                src="/icons/godot.svg"
+                src="icons/godot.svg"
               />
             </div>
           </TabPanel>
