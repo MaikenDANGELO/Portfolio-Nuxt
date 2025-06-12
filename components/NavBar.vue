@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div class="grid grid-cols-3 gap-5 p-5 m-5 bg-[#21242B]/45 border-1 rounded-2xl">
+    <div class="grid grid-cols-3 gap-5 bg-[#0C0616] p-5 m-5 rounded-2xl">
       <div class="flex flex-row gap-5">
-        <i class="pi pi-sparkles self-center" style="font-size: 32px;" />
         <NuxtLink to="/">
           <Button class="w-50" label="Accueil" icon="pi pi-home " plain text />
         </NuxtLink>
