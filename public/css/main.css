@@ -6,6 +6,7 @@
     --p-background-color: #0C0B1D;
     --p-content-background: #0C0616;
     --p-tabs-tabpanel-background: var(--p-content-background);
+    --p-tabs-tablists-background: var(--p-content-background);
     --p-primary-color: #D7AC4F;
     --p-secondary-color: #fcfbfb;
     --p-primary-hover-color: #AF8D43;

@@ -241,7 +241,39 @@
           <h2>Réalisation</h2>
           <h3>Choix techniques</h3>
         </div>
-        <div class="flex flex-col gap-2"></div>
+        <div class="flex flex-col gap-2">
+          Les choix techniques du projet se sont fait selon plusieurs critères
+          liées à l'application :
+          <br />
+
+          Modularité <br />
+          Maintenabilité <br />
+          Robustesse <br />
+          Documenté <br />
+          Adapté <br /><br />
+        </div>
+        <div class="flex flex-row gap-5">
+          <Image v-tooltip.left="'VueJS'" width="128" :src="`${baseURL}icons/vuejs.svg`" />
+          <p>
+            Le premier choix technique fait a été Vuejs comme framework de
+            développement web, selon ma proposition lors de mon entretien
+            d'embauche. Au vu de mon expérience avec le framework grâce aux
+            projets universitaires réalisés lors de ma formation, il était tout
+            a fait préférable de choisir Vuejs. Sa simplicité, sa modularité et
+            sa maintenabilité en font un atout de choix. De plus son mode de
+            rendu SPA convient totalement à une utilisation intra-entreprise, du
+            fait du nombre restreint d'utilisateurs.</p>
+        </div>
+        <div class="flex flex-row gap-[25px]">
+          <Image v-tooltip.left="'VueJS'" width="64" :src="`${baseURL}favicon.ico`" />
+          <p>
+            Au delà de ça, il a été proposé par mes tuteurs d'utiliser le
+            framework Nuxtjs par dessus Vuejs. Après avoir expérimenté avec
+            cette technologie, j'en ai conclu que Nuxtjs était adapté à
+            l'application du fait de sa structure rendant l'application très
+            maintenable et facile à développer, tout en étant robuste et
+            modulable.</p>
+        </div>
       </div>
 
       <div class="flex flex-col gap-1">
