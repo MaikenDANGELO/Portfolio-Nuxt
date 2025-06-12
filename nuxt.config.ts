@@ -27,6 +27,15 @@ export default defineNuxtConfig({
     options: {
       theme: {
         preset: Aura,
+        variables: {
+          '--p-primary-color': '#D7AC4F',
+          '--p-primary-color-text': '#fcfbfb',
+          '--p-background-color': '#0C0B1D',
+          '--p-card-color': '#fcfbfb',
+          '--p-card-subtitle-color': '#AF8D43',
+          '--p-button-primary-active-background': '#c6bbb9',
+          '--p-button-text-plain-color': '#fcfbfb',
+        }
       },
     },
   },
