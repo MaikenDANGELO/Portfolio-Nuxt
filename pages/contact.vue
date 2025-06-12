@@ -60,5 +60,3 @@
 <script lang="ts" setup>
 const baseURL = useRuntimeConfig().app.baseURL;
 </script>
-
-<style></style>
