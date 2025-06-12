@@ -2,7 +2,7 @@
   <div class="flex flex-col gap-5 m-5 p-5">
     <div class="flex flex-row gap-20 m-10 h-full items-center">
       <div class="flex flex-col border-secondary border-2 rounded-2xl">
-        <Image src="face.jpg" width="512px" class="rounded-img" />
+        <Image :src="`${baseURL}face.jpg`" width="512px" class="rounded-img" />
       </div>
 
       <div class="flex flex-col gap-5">
@@ -12,11 +12,7 @@
         </div>
         <div class="flex flex-row gap-5">
           <NuxtLink to="/contact">
-            <Button
-              class="bg-primary w-70 h-12"
-              label="Me contacter"
-              icon="pi pi-phone"
-            />
+            <Button class="bg-primary w-70 h-12" label="Me contacter" icon="pi pi-phone" />
           </NuxtLink>
         </div>
       </div>
@@ -41,51 +37,19 @@
               <TabPanels>
                 <TabPanel value="0">
                   <div class="grid grid-cols-4 gap-5 place-items-center">
-                    <Image
-                      v-tooltip.left="'Nodejs'"
-                      width="128"
-                      src="icons/nodejs.svg`"
-                    />
-                    <Image
-                      v-tooltip.left="'Nestjs'"
-                      width="128"
-                      src="icons/nestjs.svg"
-                    />
-                    <Image
-                      v-tooltip.left="'QT'"
-                      width="128"
-                      src="icons/qt.svg"
-                    />
-                    <Image
-                      v-tooltip.left="'PostgreSQL'"
-                      width="128"
-                      src="icons/pgsql.svg"
-                    />
-                    <Image
-                      v-tooltip.left="'MySQL'"
-                      width="128"
-                      src="icons/mysql.svg"
-                    />
+                    <Image v-tooltip.left="'Nodejs'" width="128" :src="`${baseURL}icons/nodejs.svg`" />
+                    <Image v-tooltip.left="'Nestjs'" width="128" :src="`${baseURL}icons/nestjs.svg`" />
+                    <Image v-tooltip.left="'QT'" width="128" :src="`${baseURL}icons/qt.svg`" />
+                    <Image v-tooltip.left="'PostgreSQL'" width="128" :src="`${baseURL}icons/pgsql.svg`" />
+                    <Image v-tooltip.left="'MySQL'" width="128" :src="`${baseURL}icons/mysql.svg`" />
                   </div>
                 </TabPanel>
 
                 <TabPanel value="1">
                   <div class="grid grid-cols-4 gap-5 place-items-center">
-                    <Image
-                      v-tooltip.left="'Vuejs3'"
-                      width="128"
-                      src="icons/vuejs.svg"
-                    />
-                    <Image
-                      v-tooltip.left="'Nuxt3'"
-                      width="128"
-                      src="icons/nuxt.svg"
-                    />
-                    <Image
-                      v-tooltip.left="'TailwindCSS'"
-                      width="128"
-                      src="icons/tailwind.svg"
-                    />
+                    <Image v-tooltip.left="'Vuejs3'" width="128" :src="`${baseURL}icons/vuejs.svg`" />
+                    <Image v-tooltip.left="'Nuxt3'" width="128" :src="`${baseURL}icons/nuxt.svg`" />
+                    <Image v-tooltip.left="'TailwindCSS'" width="128" :src="`${baseURL}icons/tailwind.svg`" />
                   </div>
                 </TabPanel>
               </TabPanels>
@@ -94,91 +58,35 @@
 
           <TabPanel value="1">
             <div class="grid grid-cols-4 gap-5 place-items-center">
-              <Image
-                v-tooltip.left="'Typescript'"
-                width="128"
-                src="icons/typescript.svg"
-              />
-              <Image
-                v-tooltip.left="'Javascript'"
-                width="128"
-                src="icons/javascript.svg"
-              />
-              <Image v-tooltip.left="'C'" width="128" src="icons/c.svg" />
-              <Image v-tooltip.left="'C++'" width="128" src="icons/cpp.svg" />
-              <Image
-                v-tooltip.left="'C#'"
-                width="128"
-                src="icons/csharp.svg"
-              />
-              <Image
-                v-tooltip.left="'Java'"
-                width="128"
-                src="icons/java.svg"
-              />
-              <Image
-                v-tooltip.left="'Kotlin'"
-                width="128"
-                src="icons/kotlin.svg"
-              />
-              <Image
-                v-tooltip.left="'Swift'"
-                width="128"
-                src="icons/swift.svg"
-              />
-              <Image
-                v-tooltip.left="'Python'"
-                width="128"
-                src="icons/python.svg"
-              />
-              <Image
-                v-tooltip.left="'HTML-5'"
-                width="128"
-                src="icons/html.svg"
-              />
-              <Image
-                v-tooltip.left="'CSS-3'"
-                width="128"
-                src="icons/css.svg"
-              />
+              <Image v-tooltip.left="'Typescript'" width="128" :src="`${baseURL}icons/typescript.svg`" />
+              <Image v-tooltip.left="'Javascript'" width="128" :src="`${baseURL}icons/javascript.svg`" />
+              <Image v-tooltip.left="'C'" width="128" :src="`${baseURL}icons/c.svg`" />
+              <Image v-tooltip.left="'C++'" width="128" :src="`${baseURL}icons/cpp.svg`" />
+              <Image v-tooltip.left="'C#'" width="128" :src="`${baseURL}icons/csharp.svg`" />
+              <Image v-tooltip.left="'Java'" width="128" :src="`${baseURL}icons/java.svg`" />
+              <Image v-tooltip.left="'Kotlin'" width="128" :src="`${baseURL}icons/kotlin.svg`" />
+              <Image v-tooltip.left="'Swift'" width="128" :src="`${baseURL}icons/swift.svg`" />
+              <Image v-tooltip.left="'Python'" width="128" :src="`${baseURL}icons/python.svg`" />
+              <Image v-tooltip.left="'HTML-5'" width="128" :src="`${baseURL}icons/html.svg`" />
+              <Image v-tooltip.left="'CSS-3'" width="128" :src="`${baseURL}icons/css.svg`" />
             </div>
           </TabPanel>
 
           <TabPanel value="2">
             <div class="grid grid-cols-4 gap-5 place-items-center">
-              <Image
-                v-tooltip.left="'Visual Studio Code'"
-                width="128"
-                src="icons/vscode.svg"
-              />
-              <Image
-                v-tooltip.left="'Blender'"
-                width="128"
-                src="icons/blender.svg"
-              />
-              <Image
-                v-tooltip.left="'Godot'"
-                width="128"
-                src="icons/godot.svg"
-              />
+              <Image v-tooltip.left="'Visual Studio Code'" width="128" :src="`${baseURL}icons/vscode.svg`" />
+              <Image v-tooltip.left="'Blender'" width="128" :src="`${baseURL}icons/blender.svg`" />
+              <Image v-tooltip.left="'Godot'" width="128" :src="`${baseURL}icons/godot.svg`" />
             </div>
           </TabPanel>
         </TabPanels>
       </Tabs>
       <div class="flex flex-row gap-5">
         <NuxtLink to="/portfolio">
-          <Button
-            class="bg-primary w-70 h-12"
-            label="Voir mon portfolio"
-            icon="pi pi-briefcase"
-          />
+          <Button class="bg-primary w-70 h-12" label="Voir mon portfolio" icon="pi pi-briefcase" />
         </NuxtLink>
         <NuxtLink to="/contact">
-          <Button
-            class="bg-primary w-70 h-12"
-            label="Me contacter"
-            icon="pi pi-phone"
-          />
+          <Button class="bg-primary w-70 h-12" label="Me contacter" icon="pi pi-phone" />
         </NuxtLink>
       </div>
     </div>
@@ -186,8 +94,7 @@
     <div class="flex flex-col gap-5 m-5 p-5">
       <h2>Qui suis-je</h2>
       <p class="text-justify">
-        <span
-          >Curieuse et fière aventurière, j'arpente avec chic l'univers du
+        <span>Curieuse et fière aventurière, j'arpente avec chic l'univers du
           numérique.<br /><br />
           Mon parcours est tout sauf typique, je me suis découvert de nouvelles
           passions par pure curiosité. Petite je touchais déjà aux ordinateurs,
@@ -226,7 +133,9 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const baseURL = useRuntimeConfig().app.baseURL;
+</script>
 
 <style scoped>
 .rounded-img ::v-deep(img) {

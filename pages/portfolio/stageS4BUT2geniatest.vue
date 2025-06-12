@@ -6,16 +6,11 @@
       <template #content>
         <div class="flex flex-row gap-10">
           <div class="flex flex-col gap-2 w-[50vw]">
-            <span
-              ><strong>Date : </strong> du 7 avril 2025 au 28 juin 2025 (12
-              semaines)</span
-            >
-            <span
-              ><strong>Cadre : </strong>formation de BUT Informatique, deuxième
-              année, à l'IUT Nord Franche Comté</span
-            >
-            <span
-              ><strong>Description : </strong><br />Réalisation d'un
+            <span><strong>Date : </strong> du 7 avril 2025 au 28 juin 2025 (12
+              semaines)</span>
+            <span><strong>Cadre : </strong>formation de BUT Informatique, deuxième
+              année, à l'IUT Nord Franche Comté</span>
+            <span><strong>Description : </strong><br />Réalisation d'un
               développement de solutions informatique, selon les besoins décrits
               des utilisateurs.<br />
               Une application web fullstack englobant protocoles
@@ -25,51 +20,22 @@
               L'application permet l'affichage de référentiel de données, la
               gestion des droits des utilisateurs, et la saisie d'éléments de
               facturation, tout en restant modulable et robuste pour des
-              évolutions futures.</span
-            >
+              évolutions futures.</span>
           </div>
           <div class="flex flex-col gap-2">
-            <span
-              ><strong>Tuteur :</strong> Nicolas THIBERT, responsable DSI chez
-              Gen'IAtest</span
-            >
-            <span
-              ><strong>Responsable :</strong> Ingrid COUTURIER, professeure
-              d'anglais à l'IUT</span
-            >
+            <span><strong>Tuteur :</strong> Nicolas THIBERT, responsable DSI chez
+              Gen'IAtest</span>
+            <span><strong>Responsable :</strong> Ingrid COUTURIER, professeure
+              d'anglais à l'IUT</span>
             <span><strong>Technologies utilisées :</strong></span>
             <div class="grid grid-cols-4 gap-5">
-              <Image
-                v-tooltip.left="'Typescript'"
-                width="32"
-                src="icons/typescript.svg"
-              />
-              <Image v-tooltip.left="'NuxtJS'" width="32" src="favicon.ico" />
-              <Image
-                v-tooltip.left="'VueJS'"
-                width="32"
-                src="icons/vuejs.svg"
-              />
-              <Image
-                v-tooltip.left="'Nodejs'"
-                width="32"
-                src="icons/nodejs.svg"
-              />
-              <Image
-                v-tooltip.left="'Nestjs'"
-                width="32"
-                src="icons/nestjs.svg"
-              />
-              <Image
-                v-tooltip.left="'PostgreSQL avec TypeORM'"
-                width="32"
-                src="icons/pgsql.svg"
-              />
-              <Image
-                v-tooltip.left="'TailwindCSS'"
-                width="32"
-                src="icons/tailwind.svg"
-              />
+              <Image v-tooltip.left="'Typescript'" width="32" :src="`${baseURL}icons/typescript.svg`" />
+              <Image v-tooltip.left="'NuxtJS'" width="32" :src="`${baseURL}favicon.ico`" />
+              <Image v-tooltip.left="'VueJS'" width="32" :src="`${baseURL}icons/vuejs.svg`" />
+              <Image v-tooltip.left="'Nodejs'" width="32" :src="`${baseURL}icons/nodejs.svg`" />
+              <Image v-tooltip.left="'Nestjs'" width="32" :src="`${baseURL}icons/nestjs.svg`" />
+              <Image v-tooltip.left="'PostgreSQL avec TypeORM'" width="32" :src="`${baseURL}icons/pgsql.svg`" />
+              <Image v-tooltip.left="'TailwindCSS'" width="32" :src="`${baseURL}icons/tailwind.svg`" />
             </div>
           </div>
         </div>
@@ -104,33 +70,25 @@
               Gen'IAtest c'est une multitude de métiers au service des éleveurs
               et de leurs élevages, il est donc important de savoir qui compose
               l'organisation, ce qu'ils font, pourquoi et comment, afin
-              d'adapter l'outil développé au mieux possible. <br /><span
-                >Pour plus d'information sur Gen'IAtest, vous pouvez vous
+              d'adapter l'outil développé au mieux possible. <br /><span>Pour plus d'information sur Gen'IAtest, vous
+                pouvez
+                vous
                 référer à leur site :
-                <a target="_blank" href="https://www.geniatest.com/"
-                  >geniatest.com</a
-                ></span
-              >
+                <a target="_blank" href="https://www.geniatest.com/">geniatest.com</a></span>
               <br /><br />
             </p>
-            <Image src="portfolio_geniatest/organigramme.jpg" />
-            <span
-              >(Figure 2) Organigramme de Gen'IAtest présentant la hiérarchie
-              des différents services</span
-            >
+            <Image :src="`${baseURL}portfolio_geniatest/organigramme.jpg`" />
+            <span>(Figure 2) Organigramme de Gen'IAtest présentant la hiérarchie
+              des différents services</span>
           </div>
           <div class="flex flex-col gap-2">
-            <Image width="512" src="portfolio_geniatest/carte_activite.jpg" />
-            <span class="w-[512px]"
-              >(Figure 1) Zone d'activité de Gen'IAtest, divisée par secteur,
+            <Image width="512" :src="`${baseURL}portfolio_geniatest/carte_activite.jpg`" />
+            <span class="w-[512px]">(Figure 1) Zone d'activité de Gen'IAtest, divisée par secteur,
               englobant les départements du Doubs, du Jura, de la Haute-Marne,
               de la Haute-Saône et du Territoire de Belfort ainsi que la Côte
               d'Or, le Haut-Rhin et les Vosges. <br />
               Source :
-              <a target="_blank" href="https://www.geniatest.com/"
-                >geniatest.com</a
-              ></span
-            >
+              <a target="_blank" href="https://www.geniatest.com/">geniatest.com</a></span>
           </div>
         </div>
       </div>
@@ -156,8 +114,7 @@
 
             Mais alors quels besoins ?<br /><br />
 
-            <span class="ml-2"
-              >- Premièrement, la saisie d'éléments de facturation de certains
+            <span class="ml-2">- Premièrement, la saisie d'éléments de facturation de certains
               services voire certains métiers était non automatisée, par
               forcément uniforme, et prone à l'erreur. Certaines informations
               saisies nécessitaient de multiples vérifications en utilisant des
@@ -173,20 +130,17 @@
               Aussi pour faciliter d'autant plus la chaîne de facturation de ces
               services, une version mobile pour les techniciens sur le terrain
               (inséminateur, marqueur, pointeur, pédicure...) est
-              préconisée.</span
-            >
+              préconisée.</span>
             <br /><br />
 
-            <span class="ml-2"
-              >- Deuxièmement, spécifiquement pour le service parage. Il faut
+            <span class="ml-2">- Deuxièmement, spécifiquement pour le service parage. Il faut
               revoir entièrement la chaîne de saisie de rendez-vous, car
               actuellement elle est réalisée à l'aide de 2 fichiers Excels, et
               du calendrier Outlook, triplant les saisies et donc les risques
               d'erreurs. Cette méthode chronophage et non pratique représente la
               majorité du temps de travail de la personne en charge de la
               gestion des rendez-vous, en plus de rendre cette activité
-              difficile à déléguer en raison de sa complexité.</span
-            ><br /><br />
+              difficile à déléguer en raison de sa complexité.</span><br /><br />
 
             Ces besoins étaient définies de manière assez vague au départ. C'est
             à dire qu'on savait qu'ils existaient, sans en savoir les détails.
@@ -224,15 +178,10 @@
 
             Ces éléments ont été condensé dans un document Microsoft Loop, que
             j'ai utilisé comme référence au cours de mon développement.
-            <Image
-              width="1024"
-              src="portfolio_geniatest/contraintes_consignes.png"
-            />
-            <span class="text-md w-[1024px]"
-              >(Figure 3) - Capture d'écran d'une partie du document Microsoft
+            <Image width="1024" :src="`${baseURL}portfolio_geniatest/contraintes_consignes.png`" />
+            <span class="text-md w-[1024px]">(Figure 3) - Capture d'écran d'une partie du document Microsoft
               Loop détaillant les contraintes et consignes à suivre lors du
-              stage, rédigé par mes collègues du DSI.</span
-            >
+              stage, rédigé par mes collègues du DSI.</span>
             <br /><br />
 
             D'autre part, le stage lui était divisé en 5 grandes parties :<br />
@@ -248,15 +197,10 @@
             cette fois-ci, que j'ai utilisé comme référence au début de mon
             stage afin d'avoir une idée du rythme de travail et de
             l'organisation mise en place.
-            <Image
-              width="1024"
-              src="portfolio_geniatest/calendrier_organisation_stage.png"
-            />
-            <span class="text-md w-[1024px]"
-              >(Figure 4) - Capture d'écran d'une partie du document Microsoft
+            <Image width="1024" :src="`${baseURL}portfolio_geniatest/calendrier_organisation_stage.png`" />
+            <span class="text-md w-[1024px]">(Figure 4) - Capture d'écran d'une partie du document Microsoft
               Lists détaillant les étapes du stage avec une estimation des dates
-              de réalisation, rédigé par mon tuteur.</span
-            >
+              de réalisation, rédigé par mon tuteur.</span>
             <br /><br />
 
             Les deux premières parties étant les plus importantes, étant donné
@@ -345,6 +289,8 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const baseURL = useRuntimeConfig().app.baseURL;
+</script>
 
 <style></style>
