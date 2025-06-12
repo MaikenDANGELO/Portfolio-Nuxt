@@ -12,16 +12,16 @@ body{
 :root {
     --p-background-color: #0C0B1D;
     --p-content-background: #0C0616;
-    --p-primary-color: #F18200;
+    --p-primary-color: #D7AC4F;
     --p-secondary-color: #fcfbfb;
-    --p-primary-hover-color: #CB6F0A;
+    --p-primary-hover-color: #AF8D43;
     --p-primary-contrast-color: #fcfbfb;
     --p-button-primary-active-background: #c6bbb9;
     --p-button-primary-active-border-color: #c6bbb9;
     --p-button-text-plain-hover-background: #2B2833;
     --p-button-text-plain-color: #fcfbfb;
     --p-primary-color-text: #fcfbfb;
-    --p-primary-color-title: #F18200;
+    --p-primary-color-title: #D7AC4F;
     --p-card-color: var(--p-primary-color-text);
     --p-card-subtitle-color: var(--p-primary-hover-color);
 }

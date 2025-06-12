@@ -2,27 +2,26 @@ import Aura from '@primeuix/themes/aura';
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
+  ssr: false,
+  css: ["~/assets/css/main.css"],
   vite: {
-    plugins: [
-      tailwindcss(),
-    ],
+    plugins: [tailwindcss()],
   },
   modules: [
-    '@nuxt/content',
-    '@nuxt/eslint',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@primevue/nuxt-module'
+    "@nuxt/content",
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@primevue/nuxt-module",
   ],
   primevue: {
     options: {
-        theme: {
-            preset: Aura
-        }
-    }
-}
-})
+      theme: {
+        preset: Aura,
+      },
+    },
+  },
+});
