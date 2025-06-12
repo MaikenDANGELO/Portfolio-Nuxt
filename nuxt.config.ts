@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/Portfolio-Nuxt/'
   },
-  css: ["~/public/main.css"],
+  css: ["~/public/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
   },
