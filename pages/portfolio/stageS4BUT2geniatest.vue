@@ -423,6 +423,19 @@
             une gestion simple de migrations.
           </p>
         </div>
+        <div class="flex flex-row gap-[25px]">
+          <Image
+            v-tooltip.left="'PostgreSQL'"
+            width="64"
+            :src="`${baseURL}icons/pgsql.svg`"
+          />
+          <p>
+            En parlant de base de données, là le choix était déjà fait et
+            c'était non négociable. La Base Activité qu'utilise Gen'IAtest est
+            une base PostgreSQL, il convient donc évidemment de l'utiliser pour
+            manipuler les données et créer de nouvelles tables au besoin.
+          </p>
+        </div>
       </div>
 
       <div class="flex flex-col gap-1">
@@ -430,7 +443,83 @@
           <h3>Authentification</h3>
         </div>
         <div class="flex flex-col gap-2">
-          <p></p>
+          <div class="flex flex-row gap-5">
+            <div class="flex flex-col gap-2">
+              <Image :src="`${baseURL}portfolio_geniatest/page_login.png`" />
+              <span
+                >(Figure 5) - Capture d'écran de la fenêtre d'authentification,
+                démontrant les deux moyens d'authentification.</span
+              >
+            </div>
+            <div class="flex flex-col gap-2">
+              <Image
+                width="768"
+                :src="`${baseURL}portfolio_geniatest/authentification_schema.svg`"
+              />
+              <span>(Figure 6) - Schéma du processus d'authentification.</span>
+            </div>
+          </div>
+          <div class="flex flex-row gap-5">
+            <div class="flex flex-col gap-2">
+              <Image
+                :src="`${baseURL}portfolio_geniatest/structure_auth.png`"
+              />
+              <span
+                >(Figure 7) - Capture d'écran de l'arborescence du module
+                d'authentification dans le backend avec les deux
+                stratégies.</span
+              >
+            </div>
+            <p>
+              L'authentification est une partie importante de l'application afin
+              de restreindre son utilisation à des utilisateurs vérifiés
+              provenant du sein de l'organisation. Il est important de savoir
+              que Gen'IAtest fonctionne beaucoup avec des outils issus de
+              Microsoft, et ont un annuaire Azure dédié avec tous leurs
+              utilisateurs. Après discussion avec mon tuteur à ce sujet, j'ai
+              décidé d'explorer la piste d'une connexion via Azure, la
+              plateforme d'authenfication Microsoft, afin de pouvoir permettre
+              aux utilisateurs d'utiliser leur compte Microsoft d'entreprise
+              pour se connecter.<br /><br />
+
+              Mon exploration m'a menée à la stratégie AzureAd de Passportjs,
+              qui correspondait parfaitement à ce que je cherchais.
+              <br /><br />Comment ça marche ? L'utilisateur va sur une page
+              spécifique sur le serveur backend définie en paramètre de
+              l'application, ce qui le redirige automatiquement sur la page
+              d'authentification de Microsoft. Une fois connecté, Microsoft
+              redirige automatiquement l'utilisateur vers l'application web, et
+              appelle une route de redirection dans le backend afin de procéder
+              à des traitements éventuels.<br />
+              C'est ce qu'on peut voir sur la figure 6 par exemple.
+              L'utilisateur appelle le serveur en allant sur une route
+              spécifique, ce qui interroge la plateforme Azure. Microsoft
+              renvoit une réponse, et des requête en base de données et des
+              traitements sont effectués avant de renvoyer une réponse au client
+              web sous forme de cookie contenant un token JWT.<br /><br />
+
+              En parlant de token JWT, il s'agit de la deuxième stratégie
+              d'authentification. En effet, si un utilisateur local, donc sans
+              contrepartie Azure, existe, il devra utiliser l'authentification
+              locale. Cette stratégie utilise les identifiants de connexion pour
+              trouver l'utilisateur en base de données, compare les mots de
+              passe, et renvoit un cookie contenant un token JWT
+              d'authentification.<br /><br />
+
+              En somme les deux stratégie fonctionne au final de la même façon,
+              seule la source de l'utilisateur diffère. Et au final, à chaque
+              fois qu'un nouvel utilisateur Azure se connecte, il est enregistré
+              en base de données pour pouvoir gérer ses autorisations, et
+              pouvoir effectuer des manipulations de données.<br /><br />
+
+              De base, l'authentification Azure était censée requêter Microsoft
+              à chaque requête avec un cookie spécifique pour authentifier
+              l'utilisateur, mais cela ne fonctionnait pas. Alors j'ai décidé
+              d'utiliser les informations utilisateurs renvoyées par Azure pour
+              en faire un token JWT en utilisant la stratégie JWT de
+              l'application.<br /><br />
+            </p>
+          </div>
         </div>
       </div>
 
@@ -438,19 +527,158 @@
         <div class="flex flex-col gap-2">
           <h3>Autorisation</h3>
         </div>
-        <div class="flex flex-col gap-2"></div>
+        <div class="flex flex-col gap-5">
+          <div class="flex flex-row gap-5">
+            <div class="flex flex-col gap-2">
+              <Image
+                width="512"
+                :src="`${baseURL}portfolio_geniatest/autorisation_model.png`"
+                preview
+              />
+              <span
+                >(Figure 8) - Modèle de données de la partie autorisation de
+                l'application.</span
+              >
+            </div>
+            <div class="flex flex-col gap-2">
+              <Image
+                :src="`${baseURL}portfolio_geniatest/gestion_utilisateur.png`"
+                preview
+              />
+              <span>(Figure 9) - Écran de gestion des utilisateurs</span>
+            </div>
+          </div>
+          <div class="flex flex-row gap-5">
+            <p>
+              Authentifier un utilisateur n'est que la première étape. Il faut
+              savoir à quelle partie de l'application il a accès, et ce qu'il a
+              le droit de faire. <br />
+              Pour répondre à cette problématique, je me suis inspirée du
+              système de rôle de Discord. C'est à dire qu'un utilisateur peut
+              posséder un ou plusieurs rôles, et ces rôles ont des autorisations
+              ou des droits. Et selon ces rôles, l'utilisateur a accès a des
+              salons (parties de l'application) spécifiques.<br /><br />
+
+              En imaginant qu'un module de l'application est un "salon", il
+              suffirait d'assigner des rôles à ce module, et les utilisateurs
+              ayant un de ces rôles auraient accès au dit module. Les droits
+              contenus dans un rôle serviront eux donc à savoir si l'utilisateur
+              a un droit d'écriture ou de lecture par exemple. Le modèle de
+              données en figure 8 reflète ce méchanisme.<br /><br />
+
+              Comme on peut le voir dans la figure 9, l'administrateur a accès à
+              un écran de gestion des utilisateurs et des rôles. Il est donc
+              possible de modifier dynamiquement les rôles des utilisateurs, et
+              donc leur accès aux modules de l'application à tout moment. La
+              modularité de ce système est primordial car de nouveaux
+              utilisateurs peuvent être introduits ou d'autres retirés ou leurs
+              missions changées. Et donc il faut pouvoir gérer leurs
+              autorisations de manière simple et intuitive. <br /><br />
+            </p>
+            <div class="flex flex-col gap-2">
+              <Image
+                :src="`${baseURL}portfolio_geniatest/gestion_roles.png`"
+                preview
+              />
+              <span>(Figure 10) - Écran de gestion des rôles</span>
+              <Image
+                :src="`${baseURL}portfolio_geniatest/gestion_modules.png`"
+                preview
+              />
+              <span>(Figure 11) - Écran de gestion des modules</span>
+            </div>
+          </div>
+          <div class="flex flex-row gap-5">
+            <div class="flex flex-col gap-2">
+              <Image
+                width="512"
+                :src="`${baseURL}portfolio_geniatest/autorisation_code.png`"
+                preview
+              />
+              <span class="w-[512px]"
+                >(Figure 12) - Exemple de code montrant la structure du
+                méchanisme d'autorisation sur une route</span
+              >
+            </div>
+            <p>
+              Cela se traduit dans le code par l'utilisation de décorateurs et
+              de gardes d'autorisation. <br /><br />
+              Après avoir défini la route, il faut protéger la route avec
+              l'authentification, cela permet de récupérer les informations
+              utilisateur qui sont primordiales pour que l'autorisation
+              fonctionne. Viennent ensuite les décorateurs d'autorisation :
+              <br />
+              - @Droits() définit les droits nécessaires à l'accès de la route
+              <br />
+              - @Roles() définit les rôles nécessaires à l'accès de la route
+              <br />
+              - @Modules() définit quels modules utilisent cette route, et étant
+              donné que les modules sont associés à un ensemble de rôles, ils
+              sont effectivement un ensemble de rôle dynamique pour une
+              route.<br /><br />
+
+              La garde d'autorisation est le middleware récupérant les
+              informations utilisateur depuis la stratégie d'authentification et
+              la base de données, ainsi que les autorisations nécessaires à
+              l'accès de la route et effectue les vérifications. La route ne
+              peut pas être appelée sans son aval, et la garde est appelée à
+              chauqe appel de route API l'utilisant.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="flex flex-col gap-1">
         <div class="flex flex-col gap-2">
           <h3>Écrans de référentiel</h3>
         </div>
-        <div class="flex flex-col gap-2"></div>
+        <div class="flex flex-row gap-2">
+          <div class="flex flex-col gap-2">
+            <Image
+              width="512"
+              :src="`${baseURL}portfolio_geniatest/referentiel_prestations.png`"
+              preview
+            />
+            <span class="w-[512px]"
+              >(Figure 13) - Capture d'écran de l'écran de référentiel des
+              prestations</span
+            >
+          </div>
+          <p>
+            Les écrans de référentiels requêtent des données à la Base Activité,
+            et les met en forme dans un composant DataTable de Primevue. Cet
+            affichage permet une restitution claire et ergonomique
+            d'informations, tout en permettant à l'occasion de modifier certains
+            champs.<br /><br />
+            Comme ici dans la figure 13, il s'agit de l'écran de référentiel des
+            prestations. Son utilité réside dans le fait de pouvoir retrouver le
+            code de prestation et diverses autres informations utilisées dans
+            les chaînes de facturation par exemple. Mon tuteur avait aussi
+            précisé que certaines colonnes devraient pouvoir être remplies et
+            modifiées, ce que j'ai implémenté en mettant des composants de
+            selection là où nécessaire.<br /><br />
+            C'est essentiellement une interface CRUD avec seulement la lecture
+            et la modification au besoin, mais aussi des fonctionnalités de filtre et de tri pour faciliter la navigation.<br /><br />
+            L'export CSV est une fonctionnalité que j'ai rajouté afin de
+            permettre à l'utilisateur de récupérer les données sur son
+            ordinateur et en faire ce qu'il veut sans passer par l'application.
+            <br /><br />Il y a deux autres écrans de référentiel, un pour les
+            cheptels (élevages), et un autre pour les techniciens, mais par
+            soucis de confidentialité je ne les montrerai pas.
+          </p>
+        </div>
       </div>
 
       <div class="flex flex-col gap-1">
         <div class="flex flex-col gap-2">
           <h3>Saisie de facturation</h3>
+        </div>
+        <div class="flex flex-col gap-2"></div>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <div class="flex flex-col gap-2">
+          <h3>Gestion d'erreur</h3>
         </div>
         <div class="flex flex-col gap-2"></div>
       </div>
